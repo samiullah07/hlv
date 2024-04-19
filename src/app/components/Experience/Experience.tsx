@@ -1,11 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { SiGitbook } from "react-icons/si";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import SwiperCore from "swiper";
+
 import "swiper/css";
+// import "swiper/swiper-bundle.min.css";
+
 const Experience = () => {
+  const swiperRef = useRef<SwiperCore>(null);
+  let swiperInstance: SwiperCore | null = null;
+  const slideToCenter = (index: number) => {
+    if (swiperInstance) {
+      swiperInstance.slideTo(index);
+    }
+  };
   return (
     <div className="bg-white">
       <div className="mt-[5rem] mb-[3rem]">
@@ -22,7 +34,7 @@ const Experience = () => {
             <SiGitbook className="text-[#99C8FF] md:block hidden w-[2rem] h-[2rem] md:ml-[4rem] rotate-180" />
           </div>
         </div>
-     
+
         <div className="testimonial-section">
           <div className="container">
             <Swiper
@@ -30,8 +42,11 @@ const Experience = () => {
               centeredSlides={true}
               slidesPerView={5}
               className="testimonial-carousel"
+              onSwiper={(swiper) => {
+                swiperInstance = swiper;
+              }}
             >
-              <SwiperSlide>
+              <SwiperSlide onClick={() => slideToCenter(0)}>
                 <div className="item center">
                   <div className="img">
                     <img
@@ -47,7 +62,7 @@ const Experience = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide onClick={() => slideToCenter(1)}>
                 <div className="item center">
                   <div className="img">
                     <img
@@ -63,7 +78,7 @@ const Experience = () => {
                   </div>
                 </div>{" "}
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide onClick={() => slideToCenter(2)}>
                 <div className="item center">
                   <div className="img">
                     <img
@@ -79,7 +94,7 @@ const Experience = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide onClick={() => slideToCenter(3)}>
                 <div className="item center">
                   <div className="img">
                     <img
@@ -95,7 +110,7 @@ const Experience = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide onClick={() => slideToCenter(4)}>
                 <div className="item center">
                   <div className="img">
                     <img
