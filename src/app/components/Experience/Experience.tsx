@@ -42,6 +42,7 @@ const Experience = () => {
               centeredSlides={true}
               slidesPerView={5}
               className="testimonial-carousel"
+              loop
               onSwiper={(swiper) => {
                 swiperInstance = swiper;
               }}
