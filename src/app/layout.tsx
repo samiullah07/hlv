@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Caudex } from "next/font/google";
-import "./globals.css";
 import "./bootstrap.css";
+import "./globals.css";
 
 import ResponsiveNav from "./components/Navigation/ResponsiveNav";
 import Footer from "./components/Footer/footer";

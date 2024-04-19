@@ -8,7 +8,6 @@ import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 
 import "swiper/css";
-// import "swiper/swiper-bundle.min.css";
 
 const Experience = () => {
   const swiperRef = useRef<SwiperCore>(null);
