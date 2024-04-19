@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ImCross } from "react-icons/im";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../../public/images/Group 18894logo.png";
+import { usePathname } from "next/navigation";
 
 interface Props {
   showNav: boolean;
@@ -11,6 +12,10 @@ interface Props {
 
 const MobileNav = ({ showNav, closeNav }: Props) => {
   const navStyle = showNav ? "translate-x-0" : "translate-x-[-100%]";
+  const pathname = usePathname();
+  useEffect(() => {
+    closeNav();
+  }, [pathname]);
 
   return (
     <div
