@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../../public/images/Group 18894logo.png";
 import { usePathname } from "next/navigation";
+import "./../../boostrap.css";
 
 interface Props {
   showNav: boolean;
